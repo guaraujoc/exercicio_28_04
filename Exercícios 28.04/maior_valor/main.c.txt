@@ -1,0 +1,54 @@
+// Gustavo Carvalho Araújo
+// 28/04/2023
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#define MAX 20
+#define INT_MAX 100
+
+int main() { //função para encontrar maior e menor valor de uma lista A[] gerada aleatoriamente
+
+    int A[MAX];
+    int big = 0;
+    int small = INT_MAX;
+
+    //gera a semente para gerar números aleatórios
+
+    srand(time(NULL));
+
+    printf("A lista a encontrar o maior valor eh: [");
+
+    // insere valores aleatórios entre 0 e INT_MAX na lista de tamanho MAX
+
+    for(int i = 0; i < MAX; i++) {
+        A[i] = rand() % INT_MAX;
+
+        //imprime a lista
+
+        printf("%d, ", A[i]);
+    }
+    printf("\b\b]\n");
+
+    // busca o maior e menor valor
+
+    for(int i = 0; i < MAX; i++) {
+
+        if (A[i] > big) {
+
+            big = A[i];
+
+        }
+
+        if(A[i] < small) {
+            small = A[i];
+        }
+    }
+
+    //imprime o maior e o menor valor
+
+    printf("O maior valor da lista eh: %d e o menor valor eh %d.\n", big, small);
+
+    return 0;
+
+}

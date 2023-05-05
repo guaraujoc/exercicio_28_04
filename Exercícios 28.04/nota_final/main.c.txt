@@ -1,0 +1,53 @@
+// Gustavo Carvalho Araújo
+// 28.04.2023
+
+#include <stdio.h>
+
+int main() {
+
+    float nt1, ar1, ex1, nt2, ar2, ex2, nf;
+
+    printf("Trabalho 1|\t");
+
+    printf("Insira a nota do trabalho, arguicao e exercicios, respectivamente:\t\n");
+
+    // recebe a relação dos alunos no trabalho 1
+
+    scanf("%f%f%f", &nt1, &ar1, &ex1);
+
+    // define a nota do aluno no trabalho 1
+
+    float t1 = (0.9 * nt1 * ar1 / 10) + (0.1 * ex1);
+
+    printf("Trabalho 2|\t");
+
+    printf("Insira a nota do trabalho, arguicao e exercicios, respectivamente:\t\n");
+
+    // recebe a relação dos alunos no trabalho 2
+
+    scanf("%f%f%f", &nt2, &ar2, &ex2);
+
+    // define a nota do aluno no trabalho 2
+
+    float t2 = (0.9 * nt2 * ar2 / 10) + (0.1 * ex2);
+
+    //define a sua nota final
+
+    nf = 0.3 * t1 + 0.7 * t2;
+
+    printf("\nO aluno esta ");
+
+    //imprime a sua relação
+
+    if(nf < 3)
+        printf("REPROVADO.");
+
+    if(nf >= 3 && nf < 5)
+        printf(" de RECUPERACAO.");
+
+    if(nf >= 5)
+        printf("APROVADO!");
+
+
+    return 0;
+}

@@ -1,0 +1,53 @@
+// Gustavo Carvalho Araújo
+// 28.04.2023
+
+#include <stdio.h>
+#define MAX 100
+
+int main() { //função que lê uma lista de notas até que um número negativo seja digitado e retorna o maior e menor valor
+
+    int big = 0;
+    int sml = MAX; // valor máximo definido pelo macro
+    int i = 1;
+    int n = 0;
+    int nota;
+    int A[MAX]; // define lista a armazenar as notas
+    
+    scanf("%d", &nota); // verifica a primeira nota
+    if(nota < 0){
+        printf("Voce nao digitou notas positivas.");
+        return -1; //primeira nota foi negativa, finaliza o programa
+    }
+    else{
+        A[0] = nota;
+        n++;
+    }
+
+    while(nota >= 0){
+
+        // recebe as notas
+        scanf("%d", &nota);
+
+        // salva na lista
+        A[i] = nota;
+
+        i++;
+        n++;
+
+    }
+
+    // encontra o maior e menor valor da lista
+    for(i = 0; i < n - 1; i++) {
+        if (A[i] > big) {
+            big = A[i];
+        }
+        if(A[i] < sml){
+            sml = A[i];
+        }
+    }
+
+    // imprime
+    printf("Maior nota: %d\nMenor nota:%d", big, sml);
+
+    return 0; //sucesso
+}

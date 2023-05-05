@@ -1,0 +1,54 @@
+// Gustavo Carvalho Araújo
+// 28.04.2023
+
+#include <stdio.h>
+
+int main(){
+
+    int x;
+
+    //recebe o valor
+    scanf("%d", &x);
+    int y = 0;
+    int z = 1;
+
+    // caso for 0
+    if(x == 0){
+
+        printf("A sequencia de Fibonacci ate o numero superior a %d eh: [0]", x);
+        return -1;
+
+    }
+
+    printf("A sequencia de Fibonacci ate o numero superior a %d eh: [", x);
+
+    // realiza a operação
+    while(y <= x){
+
+        //imprime
+        printf("%d, ", y);
+        y = y + z; // y é igual ao valor de z mais o seu antigo valor
+
+        //imprime
+        printf("%d, ", z);
+        z = y + z; // z é igual ao seu valor de y mais o seu antigo valor
+
+
+    }
+
+    // quando z - y é menor que x, o while irá parar, visto que y entrou com um valor maior que x
+    if(z - y <= x){
+
+        // imprime o valor subsequente no caso de z - y <= x
+        printf("%d]", y);
+
+    }
+
+    //imprime quando x - y > x
+    else{
+        printf("\b\b]");
+    }
+    
+    return 0; //sucesso
+
+}

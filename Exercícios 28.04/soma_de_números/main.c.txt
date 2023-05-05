@@ -1,0 +1,28 @@
+// Gustavo Carvalho Araújo
+// 28.04.2023
+
+#include <stdio.h>
+
+int sum(int x, int y){  // função que soma os valores de x até y
+
+    int z = y;
+    while(x != y){  // enquanto x é diferente de y, soma o sucessor
+
+        z += x;
+        x++;
+    }
+
+    return z; 
+}
+
+int main(){
+
+    //imprime os valores
+    
+    int x, y;
+
+    printf("Insira os limites da soma:\n");
+    scanf("%d%d", &x, &y);
+    printf("A soma de %d ate %d eh: %d",x, y, sum(x,y));
+
+}

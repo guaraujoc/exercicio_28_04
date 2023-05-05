@@ -1,0 +1,55 @@
+// Gustavo Carvalho Araújo
+// 28.04.2023
+
+#include <stdio.h>
+
+int ordenacao(int a, int b, int c) {
+
+    int n = 3;
+    int A[n], x;
+
+    A[0] = a;
+    A[1] = b;
+    A[2] = c;
+
+    printf("Os valores em ordem crescente eh: [");
+
+    //percorre os valores da lista
+
+    for(int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+
+            //se um valor menor estiver na frente de um maior valor, troca a posição
+
+            if (A[i] < A[j]) {
+                x = A[i];
+                A[i] = A[j];
+                A[j] = x;
+            }
+        }
+    }
+
+    //imprime a lista ordenada
+
+    for(int i = 0; i < n; i++)
+        printf("%d, ", A[i]);
+
+    printf("\b\b]");
+
+    //sucesso
+
+    return 0;
+
+}
+
+int main() {
+
+    int a, b, c;
+
+    //recebe os valores a serem ordenados
+
+    scanf("%d%d%d", &a, &b, &c);
+
+    ordenacao(a, b, c);
+
+}

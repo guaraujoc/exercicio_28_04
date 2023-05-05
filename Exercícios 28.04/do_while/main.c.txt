@@ -1,0 +1,29 @@
+// Gustavo Carvalho Araújo
+// 28.04.2023
+
+#include <stdio.h>
+
+void main() {
+    
+    char ch;
+    
+    printf("\nDigite um caracter (digite s para sair): ");
+    
+    while (ch != 's') {
+        
+        //recebe um caracter
+        ch = getchar();
+        
+        // imprime o caracter digitado pelo usuário
+        
+        while (getchar() != '\n');
+        printf("\nO caracter digitado eh [%c]", ch);
+        
+        //se o usuário sigitar s, fecha-se o loop
+        
+        if (ch != 's') {
+            printf("\nDigite outro caracter (digite s para sair): ");
+        }
+    }
+    printf("\nSaindo do loop\n");
+}
